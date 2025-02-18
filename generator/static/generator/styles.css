@@ -136,3 +136,12 @@ p {
     visibility: visible;
     opacity: 1;
 }
+
+footer {
+    margin-top: 20px;
+    font-size: small;
+}
+
+footer a {
+    color: lightcoral;
+}
