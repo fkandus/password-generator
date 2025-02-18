@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+        <meta charset="utf-8" />
+        <title>Generate password</title>
+        <meta name="description" content="Generate a secure password with customizable options." />
+        <meta name="keywords" content="password, generator, secure, customizable" />
+    </head>
+    <body>
+        {% if error %}
+        <h2>Errors:</h2>
+        <p>{{ error }}</p>
+        {% endif %}
+
+        <form action="{% url 'generator:index' %}" method="post">
+            {% csrf_token %}
+            <fieldset>
+                <legend><h1>Generate password</h1></legend>
+
+                <label for="length">Length:</label>
+                <input type="number" name="length" id="length" value="{{ length }}" min="1" max="50" required />
+
+                <label for="uppercase">Uppercase:</label>
+                <input type="checkbox" name="uppercase" id="uppercase" {% if uppercase %}checked{% endif %} />
+
+                <label for="lowercase">Lowercase:</label>
+                <input type="checkbox" name="lowercase" id="lowercase" {% if lowercase %}checked{% endif %} />
+
+                <label for="numbers">Numbers:</label>
+                <input type="checkbox" name="numbers" id="numbers" {% if numbers %}checked{% endif %} />
+
+                <label for="special">Special characters:</label>
+                <input type="checkbox" name="special" id="special" {% if special %}checked{% endif %} />
+            </fieldset>
+            <input type="submit" value="Generate" />
+        </form>
+
+        {% if password %}
+        <h2>Generated password:</h2>
+        <p>{{ password }}</p>
+        {% endif %}
+    </body>
+</html>
