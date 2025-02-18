@@ -1,0 +1,138 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #1e1e2f;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+}
+
+h1,
+h2 {
+    color: #ffcc00;
+}
+
+form {
+    background-color: #29293d;
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 400px;
+    margin: 20px auto;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+fieldset {
+    border: none;
+}
+
+legend h1 {
+    margin: 0;
+}
+
+label {
+    display: block;
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+input[type="number"],
+input[type="checkbox"] {
+    margin: 5px 0;
+}
+
+input[type="number"] {
+    width: 15%;
+    padding: 8px;
+    border: none;
+    border-radius: 5px;
+    background: #444;
+    color: #fff;
+    font-size: 16px;
+}
+
+input[type="submit"] {
+    background-color: #ffcc00;
+    color: #1e1e2f;
+    font-size: 16px;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 15px;
+    width: 100%;
+}
+
+input[type="submit"]:hover {
+    background-color: #e6b800;
+}
+
+p {
+    font-size: 18px;
+    font-weight: bold;
+    background: #444;
+    padding: 10px;
+    border-radius: 5px;
+    display: inline-block;
+    margin-top: 10px;
+}
+
+.error {
+    color: #ff3333;
+}
+
+.input-password {
+    width: 20%;
+    background-color: #f9f9f9;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 16px;
+    color: #333;
+    cursor: default;
+}
+
+.copy-button {
+    background-color: #008cba;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.1s ease;
+}
+
+.copy-button:hover {
+    background-color: #007bb5;
+}
+
+.copy-button:active {
+    background-color: #006a9c;
+    transform: scale(0.98);
+}
+
+.tooltip {
+    position: relative;
+    display: inline-block;
+}
+
+.tooltip .tooltiptext {
+    visibility: hidden;
+    width: 150px;
+    background-color: #555;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px;
+    position: absolute;
+    z-index: 1;
+    bottom: 150%;
+    left: 50%;
+    margin-left: -75px;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+    opacity: 1;
+}

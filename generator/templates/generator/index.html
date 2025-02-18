@@ -1,3 +1,5 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="en-US">
     <head>
@@ -5,11 +7,13 @@
         <title>Generate password</title>
         <meta name="description" content="Generate a secure password with customizable options." />
         <meta name="keywords" content="password, generator, secure, customizable" />
+        <link rel="stylesheet" href="{% static 'generator/styles.css' %}" />
+        <script src="{% static 'generator/scripts.js' %}"></script>
     </head>
     <body>
         {% if error %}
         <h2>Errors:</h2>
-        <p>{{ error }}</p>
+        <p class="error">{{ error }}</p>
         {% endif %}
 
         <form action="{% url 'generator:index' %}" method="post">
@@ -37,7 +41,13 @@
 
         {% if password %}
         <h2>Generated password:</h2>
-        <p>{{ password }}</p>
+        <input type="text" id="password" class="input-password" value="{{ password }}" readonly />
+        <div class="tooltip">
+            <button onclick="copyText()" onmouseout="outFunc()" class="copy-button">
+                <span class="tooltiptext" id="myTooltip">Copy to clipboard</span>
+                Copy text
+            </button>
+        </div>
         {% endif %}
     </body>
 </html>
