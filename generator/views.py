@@ -21,7 +21,7 @@ def index(request):
             "special": special,
         }
 
-        if length == None:
+        if length == "":
             context["error"] = "Please enter a length."
         elif (
             uppercase == None
@@ -38,5 +38,8 @@ def index(request):
                 numbers,
                 special,
             )
+
+    if "length" not in context:
+        context["length"] = 20
 
     return render(request, "generator/index.html", context)
